@@ -1,15 +1,23 @@
 {
-	cheeseburger: {
-		price: 2.35,
-		description: "A regular cheeseburger."
+	"food": {
+		{
+			"name": "cheeseburger";
+			"price": 2.35,
+			"description": "A regular cheeseburger."
+			"number": 0
+		},
+		{
+			"name": "fries"
+			"price": .12,
+			"description": "A pack of -2 fries. That was not a typo."
+			"number": 0
+		}
 	}
 
-	milkshake: {
-		price: 6,
-		description: "A regular milkshake."
-	}
-	fries: {
-		price: .12,
-		description: "A pack of -2 fries. That was not a typo."
+	"drink": {
+		"name": "milkshake"
+		"price": 6,
+		"description": "A regular milkshake."
+		"number": 0
 	}
 }
