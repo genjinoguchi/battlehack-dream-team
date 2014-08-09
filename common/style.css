@@ -1,0 +1,20 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+html, body {
+	height: 100%;
+	background: #D9D9D9;
+}
+#main_wrapper {
+	width: 70%;
+	min-height: 100%;
+	background: #ffffff;
+	margin-left: auto;
+	margin-right: auto;
+
+	text-align: center;
+}
+#header {
+
+}

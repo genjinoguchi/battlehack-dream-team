@@ -1,0 +1,15 @@
+{
+	cheeseburger: {
+		price: 2.35,
+		description: "A regular cheeseburger."
+	}
+
+	milkshake: {
+		price: 6,
+		description: "A regular milkshake."
+	}
+	fries: {
+		price: .12,
+		description: "A pack of -2 fries. That was not a typo."
+	}
+}
