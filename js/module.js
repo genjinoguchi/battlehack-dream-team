@@ -1,6 +1,6 @@
 function mainController($scope, $http) {
-	$scope.getFromJson = function() {
-		$http({method: 'POST', url: 'restaurants/sample.json'})
+	$scope.getFromJson = function(url) {
+		$http({method: 'POST', url: url})
 			.success(function (data) {
 				$scope.dataFromJson = data; // response data
 			});
@@ -15,11 +15,7 @@ function mainController($scope, $http) {
 		return $scope.subtotal;
 	}
 	$scope.calculateAndPaySubtotal = function() {
-		$scope.subtotal = 0;
-		var div = document.getElementsByClassName("input");
-		for (var i = 0; i < div.length; i++) {
-			$scope.subtotal += div[i].value * parseFloat(div[i].name);
-		}
+		$scope.calculateSubtotal();
 		venmo.send($scope.subtotal);
 	}
 }
