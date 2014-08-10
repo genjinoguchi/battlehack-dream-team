@@ -33,14 +33,19 @@ app.controller("menuController", function($scope, $firebase, $routeParams, $http
 		if(!$scope.phoneNumber || !$scope.customerName){
 			alert("You're an idiot.");
 		}else{
-			$scope.calculateSubtotal();
-			venmo.send($scope.subtotal);
-			$scope.addOrder();
+			var b = confirm("Please confirm your phone number: " + $scope.phoneNumber);
+			if (b == true) {
+				alert("Thank you for your order. You will receive at text message at  when your food is ready.");
 
-			//Push the order onto firebase
-			$scope.order.customerName = $scope.customerName;
-			$scope.order.phoneNumber = $scope.phoneNumber;
-			$scope.orders.$add($scope.order);
+				$scope.calculateSubtotal();
+				venmo.send($scope.subtotal);
+				$scope.addOrder();
+
+				//Push the order onto firebase
+				$scope.order.customerName = $scope.customerName;
+				$scope.order.phoneNumber = $scope.phoneNumber;
+				$scope.orders.$add($scope.order);
+			}
 		}
 
 
