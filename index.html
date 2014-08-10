@@ -15,20 +15,20 @@
 	</head>
 
 	<body>
-		<div id="main_wrapper" ng-controller="mainController">
+		<div id="main_wrapper" ng-controller="mainController" ng-init="getFromJson()">
 			<div id="header">
 				Hello World!
 			</div>
-			{{ getFromJson() }}
 			<div id="menu" ng-repeat="data in dataFromJson">
-				<input type="number" min="0" name={{data.price}} ng-model="quantity"> {{ data.name }} - {{ data.description }}<br>
+				<input type="number" class="input" min="0" name={{data.price}} ng-model="quantity"> {{ data.name }} - {{ data.description }}<br>
 
 {{ data.price | currency }} each / {{ data.price * quantity | currency }} total
  <br>
 			</div>
+			{{ calculateSubtotal() }}
 
-			<div id="subtotal">
-				Subtotal: {{  }}
+			<div id="pay">
+				<input type="button" value="Pay now" ng-click="calculateAndPaySubtotal()">
 			</div>
 
 
