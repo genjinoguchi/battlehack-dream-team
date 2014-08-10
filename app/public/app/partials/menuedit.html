@@ -1,0 +1,21 @@
+<div id='menuedit'>
+	<div ng-repeat="order in orders">
+		<div class="col-md-3 col-sm-6 hero-feature">
+	    	<div class="thumbnail">
+	    		
+	        	<img src="./img/rsz_crabby2.jpg" alt="">
+	        	<div class="caption">
+	            	<h3>{{ order.customerName}}</h3>
+	            	<p>{{ order.phoneNumber}}</p>
+	            	<div ng-repeat="food in order.foods">
+	            		<center>{{ food.name }} - {{ food.quantity }}</center><br>
+
+	            	</div>
+	            	<button ng-click="menu.$remove(item)" value="Finish item."
+	        	</div>
+	    	</div>
+		
+		</div>
+	</div>
+</div>
+
