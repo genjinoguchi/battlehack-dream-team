@@ -13,11 +13,15 @@ app.controller("reviewController", function($scope, $firebase, $routeParams, $ht
 		return orderString;
 	}
 
-	$scope.orderdone = function(order, orders, phonenumber) {
+	$scope.orderdone = function(order, orders) {
 		orders.$remove(order);
-		$http.post("/sendtext",phonenumber)
-		.success(function(data) {console.log(data);})
-		.error(function(data {console.log(data)}))
+		var data = 
+		{
+			"name": order.customerName,
+			"phoneNumber": order.phoneNumber
+
+		}
+		$http.post("/sendtext",data);
 
 	}
 	
