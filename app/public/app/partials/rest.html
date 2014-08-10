@@ -8,12 +8,12 @@
 		<style>
 			@font-face {
    				font-family: shabby;
-   				src: url(./Anothershabby_trial.ttf);
+   				src: url(Anothershabby_trial.ttf);
 			}
 
 			@font-face {
 				font-family: champagne;
-				src: url(./Champagne&Limousines.ttf);
+				src: url(Champagne&Limousines.ttf);
 			}
 
 			html body{
@@ -54,6 +54,7 @@
 			}
 
 			h3 { 
+					font-size:20px;
    				position: absolute; 
    				top: 0px; 
    				left: 0; 
@@ -87,11 +88,11 @@
 		<br>
 		<br>
 		<br>
-		<div style="background:white;width:60%;"><div class="descript">
+		<div style="background:white;width:70%;"><div class="descript">
 			<h1>Participating Restaurants</h1>
 			<br><br>
 			<div id="restaurantList">
-				<div ng-repeat="restaurant in restaurants">
+				<div ng-repeat="restaurant in restaurants" style="margin: 20px">
 					<div class="col-md-3 col-sm-6 hero-feature">
 						<div class="thumbnail">
 							<a href="/#/restaurants/{{restaurant.$id}}">
@@ -99,7 +100,7 @@
 							</a>
 							<div class="caption">
 								<a href="/#/restaurants/{{restaurant.$id}}"><h3>{{ restaurant.name }}</h3></a>
-								<a href="/#/restaurants/{{restaurant.$id}}"><p style="color:black">{{ restaurant.description}}</p><a>
+								<a href="/#/restaurants/{{restaurant.$id}}"><p style="color:black"><br> {{ restaurant.description}}</p><a>
 								<center style="color:black">${{ restaurant.priceRange }}</center><br>
 							</div>
 						</div>
@@ -109,6 +110,7 @@
 				</div>
 
 			</div>
+			<div style="clear: both;"></div>
 			<br><br><br><br><br><br><br><br><br><br><br>
 
 		</div></div></center>

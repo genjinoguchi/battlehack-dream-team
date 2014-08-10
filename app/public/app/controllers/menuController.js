@@ -7,6 +7,14 @@ app.controller("menuController", function($scope, $firebase, $routeParams, $http
 
 	$scope.orders = $firebase(restaurant.child("/orders")).$asArray();
 
+	$scope.getImagePath = function(item) {
+		if (item.name === "Krabby Patty") {
+			return "../../img/rsz_crabby2.jpg";
+		}else if (item.name ==="Sea Salt Fries") {
+			return "../../img/frie.jpg";
+		} else return "../../img/rsz_green-smoothie.jpg"
+	}
+
 	/*
 	var restaurant = $routeParams.restaurantName;
 	var menuRef = rootRef.child("")
