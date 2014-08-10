@@ -11,16 +11,27 @@ var restaurant = {
 	add_food:function() {
 		var name = document.getElementById("add_food_name").value;
 		var price = document.getElementById("add_food_price").value;
+		var counter = restaurant.counter++;
+
+		restaurant.foods.push(
+			{"name": name, "price": price, "id" : counter}
+		);
 
 		var div = document.createElement("div");
-		div.id = restaurant.counter++;
+		div.id = counter;
 		div.innerHTML = name + "&nbsp;" + price;
 
 		var removebutton = document.createElement("button");
 		removebutton.value = "Remove"
-		removebutton.className = restaurant.counter;
+		removebutton.className = counter;
 		//removebutton.onclick = restaurant.remove_food(removebutton.className);
 		removebutton.onclick = function() {
+			for (var i = 0; i < restaurant.foods.length; i++) {
+				if ("" + restaurant.foods[i].id === removebutton.className) {
+					restaurant.foods.splice(i, 1);
+					break;
+				}
+			}
 			this.parentElement.parentElement.removeChild(this.parentElement);
 		}
 		div.appendChild(removebutton);
@@ -29,9 +40,5 @@ var restaurant = {
 		document.getElementById("add_food_price").value = "";
 
 		document.getElementById("main_wrapper").appendChild(div);
-
-		restaurant.foods.push(
-			{"name": name, "price": price}
-		);
 	}
 }
