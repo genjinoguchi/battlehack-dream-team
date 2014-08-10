@@ -25,7 +25,10 @@
 {{ data.price | currency }} each / {{ data.price * quantity | currency }} total
  <br>
 			</div>
-			{{ calculateSubtotal() }}
+
+			<div id="subtotal">
+				Subtotal - {{ calculateSubtotal() | currency}}
+			</div>
 
 			<div id="pay">
 				<input type="button" value="Pay now" ng-click="calculateAndPaySubtotal()">
