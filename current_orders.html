@@ -1,7 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="">
 
+	<head>
+		<title>Current orders for restaurants</title>
+		<link rel="stylesheet" href="common/style.css">
+		<meta charset="utf-8">
+		<script src="js/angular.min.js"></script>
+		<script src="js/orders.js"></script>
+	</head>
 
-
+	<body>
+		<div id="main_wrapper" ng-controller="mainController" ng-init="getFromJson('restaurants/sample/orders.json')">
+			<div id="orders" ng-repeat="data in dataFromJson">
+				<a ng-click="removeOrder()">
+				<div id="an_order">
+					{{ showOrders(data) }}
+				</div>
+				</a>
+			</div>
+		</div>
+	</body>
 
 </html>

@@ -20,7 +20,7 @@
 				Hello World!
 			</div>
 			<div id="menu" ng-repeat="data in dataFromJson">
-				<input type="number" class="input" min="0" name={{data.price}} ng-model="quantity"> {{ data.name }} - {{ data.description }}<br>
+				<input type="number" id={{data.name}} class="input" min="0" name={{data.price}} ng-model="quantity"> {{ data.name }} - {{ data.description }}<br>
 
 {{ data.price | currency }} each / {{ data.price * quantity | currency }} total
  <br>
