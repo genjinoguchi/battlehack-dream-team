@@ -5,6 +5,10 @@ function mainController($scope, $http) {
 				$scope.dataFromJson = data; // response data
 			});
 	}
+	$scope.IDcounter = 0;
+	$scope.setID = function(element) {
+		this.id = ++$scope.IDcounter;
+	}
 	$scope.showOrders = function(data) {
 		var orderString = "";
 		for (var key in data) {
@@ -12,7 +16,7 @@ function mainController($scope, $http) {
 		}
 		return orderString;
 	}
-	$scope.removeOrder = function() {
-		this.parentElement.removeChild(this);
+	$scope.removeOrder = function(element) {
+		element.parentElement.parentElement.removeChild(this.parentElement);
 	}
 }
