@@ -6,5 +6,5 @@ app.controller("editController", function($scope, $firebase, $routeParams){
 	$scope.menu = sync.$asArray();
 
 
-	
+
 })
