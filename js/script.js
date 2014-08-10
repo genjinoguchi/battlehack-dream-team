@@ -6,14 +6,24 @@ var venmo = {
 }
 
 var restaurant = {
-	foods:[],
+	foods: [],
+	counter: 0,
 	add_food:function() {
 		var name = document.getElementById("add_food_name").value;
 		var price = document.getElementById("add_food_price").value;
 
 		var div = document.createElement("div");
-		div.id = "food";
-		div.innerHTML = name + "   " + price;
+		div.id = restaurant.counter++;
+		div.innerHTML = name + "&nbsp;" + price;
+
+		var removebutton = document.createElement("button");
+		removebutton.value = "Remove"
+		removebutton.className = restaurant.counter;
+		//removebutton.onclick = restaurant.remove_food(removebutton.className);
+		removebutton.onclick = function() {
+			this.parentElement.parentElement.removeChild(this.parentElement);
+		}
+		div.appendChild(removebutton);
 
 		document.getElementById("add_food_name").value = "";
 		document.getElementById("add_food_price").value = "";
