@@ -1,0 +1,29 @@
+{
+  "name": "myfirstheroku",
+  "version": "0.0.0",
+  "description": "Heroku don't fail me now",
+  "main": "web.js",
+  "scripts": {
+    "test": "node web.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/genjinoguchi/myfirstheroku.git"
+  },
+  "author": "genji",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/genjinoguchi/myfirstheroku/issues"
+  },
+  "homepage": "https://github.com/genjinoguchi/myfirstheroku",
+  "dependencies": {
+    "body-parser": "^1.6.2",
+    "express": "^4.8.2",
+    "logfmt": "^1.1.2",
+    "method-override": "^2.1.2",
+    "mongojs": "^0.13.1"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
