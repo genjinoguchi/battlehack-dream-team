@@ -24,7 +24,6 @@ var restaurant = {
 		var removebutton = document.createElement("button");
 		removebutton.value = "Remove"
 		removebutton.className = counter;
-		//removebutton.onclick = restaurant.remove_food(removebutton.className);
 		removebutton.onclick = function() {
 			for (var i = 0; i < restaurant.foods.length; i++) {
 				if ("" + restaurant.foods[i].id === removebutton.className) {

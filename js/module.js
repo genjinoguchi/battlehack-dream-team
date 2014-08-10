@@ -1,9 +1,9 @@
-var app = angular.module("app",[]);
-
-app.controller("getJsonData", function($scope,$http) {
-	init();
-
-	function init($http){
-		
+function mainController($scope, $http) {
+	$scope.getFromJson = function() {
+		$http({method: 'POST', url: 'restaurants/sample.json'})
+			.success(function (data) {
+				$scope.dataFromJson = data; // response data
+			});
 	}
+	$scope.subtotal = 0.00;
 }
