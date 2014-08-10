@@ -10,7 +10,7 @@
 	            	<div>
 	            		{{ displayOrderFoods(order.foods)}}
 	            	</div>
-	            	<input type="button" ng-click="orders.$remove(order)" value="Finish item">
+	            	<input type="button" ng-click="orderdone(order, orders,{{ order.phoneNumber }})" value="Finish item">
 	        	</div>
 	    	</div>
 		
