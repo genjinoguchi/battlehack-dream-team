@@ -80,20 +80,29 @@
         		</div>
         	</div>
        	</div>
-        		<div style="clear: both"></div>
 
-        		<div id="checkout" style="margin-left: auto;
-        		margin-right: auto;
-        		text-align: center">
-        		<div id="subtotal">
-        			<span style="font: 24px bold">Subtotal - <span style="color: blue">{{ calculateSubtotal() | currency}}</span></span>
-        		</div>
-        		<div id="pay" style="margin: 5px">
-        			<input type="text" placeholder="Name" ng-model="customerName" size="15">
+       	<div class="row">
+       		<div class="col-lg-12">
+       			<h3>Total: {{ calculateSubtotal() | currency}}</h3>
+       			<div id="pay">
+       				<input type="text" placeholder="Name" ng-model="customerName" size="15">
         			<input type="text" placeholder="Phone Number"  ng-model="phoneNumber" size="25"><br><br>
-        			<input type="button" value="Pay now" ng-click="calculateAndPaySubtotal()">
-        		</div>
-        	</div>
+        			<input href="#" type="button" value="Pay now" ng-click="calculateAndPaySubtotal()" class="btn btn-primary">
+       			</div>
+       		</div>
+       	</div>
+   		<!-- /.row -->
+
+   		<hr>
+
+   		<!-- Footer -->
+   		<footer>
+   			<div class="row">
+   				<div class="col-lg-12">
+   					<p>Copyright &copy; The Krusty Krab</p>
+   				</div>
+   			</div>
+   		</footer>
 
 
 
