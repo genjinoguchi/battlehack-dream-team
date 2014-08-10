@@ -8,12 +8,12 @@
 		<style>
 			@font-face {
    				font-family: shabby;
-   				src: url(http://lineless.github.io/res/fonts/Anothershabby_trial.ttf);
+   				src: url(./Anothershabby_trial.ttf);
 			}
 
 			@font-face {
 				font-family: champagne;
-				src: url(http://lineless.github.io/res/fonts/Champagne&Limousines.ttf);
+				src: url(./Champagne&Limousines.ttf);
 			}
 
 			html body{
@@ -94,12 +94,12 @@
 				<div ng-repeat="restaurant in restaurants">
 					<div class="col-md-3 col-sm-6 hero-feature">
 						<div class="thumbnail">
-							<a href="/#/restaurants/krustykrab">
+							<a href="/#/restaurants/{{restaurant.$id}}">
 								<img src="./img/rsz_crabby2.jpg" alt="">
 							</a>
 							<div class="caption">
-								<a href="/#/restaurants/krustykrab"><h3>{{ restaurant.name }}</h3></a>
-								<a href="/#/restaurants/krustykrab"><p style="color:black">{{ restaurant.description}}</p><a>
+								<a href="/#/restaurants/{{restaurant.$id}}"><h3>{{ restaurant.name }}</h3></a>
+								<a href="/#/restaurants/{{restaurant.$id}}"><p style="color:black">{{ restaurant.description}}</p><a>
 								<center style="color:black">${{ restaurant.priceRange }}</center><br>
 							</div>
 						</div>
@@ -120,12 +120,12 @@
 				<div ng-repeat="restaurant in restaurants">
 					<div class="col-md-3 col-sm-6 hero-feature">
 						<div class="thumbnail">
-							<a href="/#/restaurants/krustykrab">
+							<a href="/#/restaurants/{{restaurant.$id}}">
 								<img src="./img/rsz_crabby2.jpg" alt="">
 							</a>
 							<div class="caption">
-								<a href="/#/restaurants/krustykrab"><h3>{{ restaurant.name }}</h3></a>
-								<a href="/#/restaurants/krustykrab"><p>{{ restaurant.description}}</p><a>
+								<a href="/#/restaurants/{{restaurant.$id}}"><h3>{{ restaurant.name }}</h3></a>
+								<a href="/#/restaurants/{{restaurant.$id}}"><p>{{ restaurant.description}}</p><a>
 								<center>${{ restaurant.priceRange }}</center><br>
 							</div>
 						</div>

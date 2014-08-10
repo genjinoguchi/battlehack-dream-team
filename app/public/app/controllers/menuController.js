@@ -1,11 +1,11 @@
 app.controller("menuController", function($scope, $firebase, $routeParams, $http){
 	var rootRef = new Firebase("https://intense-fire-7167.firebaseio.com/restaurants/");
-	var foods = rootRef.child("-JTzTkaviRMl4PLRSFpB/foods");
+	var restaurant = rootRef.child($routeParams.id+"/");
+	var foods = restaurant.child("foods")
 	var sync = $firebase(foods);
 	$scope.menu = sync.$asArray();
 
-	$scope.orders = $firebase(foods.parent().child("/orders")).$asArray();
-
+	$scope.orders = $firebase(restaurant.child("/orders")).$asArray();
 
 	/*
 	var restaurant = $routeParams.restaurantName;
