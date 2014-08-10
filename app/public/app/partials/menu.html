@@ -70,18 +70,16 @@
         					<div class="caption">
         						<h3>{{ item.name }}</h3>
         						<p>{{ item.description }}</p>
-        							<center>{{ item.price | currency }}</center><br>
-        							<p>
-        								Quantity: <input ng-model="quantity" class="input" id={{item.name}} name={{item.price}} type="number" min="0" size="1" placeholder="0">
-        							</p>
-
-        						</div>
+    							<center>{{ item.price | currency }}</center><br>
+    							<p>
+    								Quantity: <input ng-model="quantity" class="input" id={{item.name}} name={{item.price}} type="number" min="0" size="1" placeholder="0">
+    							</p>
         					</div>
-
         				</div>
         			</div>
         		</div>
-
+        	</div>
+       	</div>
         		<div style="clear: both"></div>
 
         		<div id="checkout" style="margin-left: auto;
@@ -96,7 +94,7 @@
         			<input type="button" value="Pay now" ng-click="calculateAndPaySubtotal()">
         		</div>
         	</div>
-        </div>
+
 
 
 
