@@ -39,17 +39,17 @@ app.config(function ($routeProvider) {
         		controller: 'restaurantController',
                 templateUrl: 'app/partials/rest.html'
         	})
-        .when('/restaurants/krustykrab',
+        .when('/restaurants/:id',
             {
                 controller: 'menuController',
                 templateUrl: 'app/partials/menu.html'
             })
-        .when('/restaurants/edit/krustykrab',
+        .when('/restaurants/edit/:id',
         	{
         		controller: 'editController',
                 templateUrl: 'app/partials/menuedit.html'	
         	})
-        .when('/restaurants/review/krustykrab',
+        .when('/restaurants/review/:id',
             {
                 controller: 'reviewController',
                 templateUrl: 'app/partials/review.html'
