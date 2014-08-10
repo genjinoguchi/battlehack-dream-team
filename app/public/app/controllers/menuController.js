@@ -33,14 +33,18 @@ app.controller("menuController", function($scope, $firebase, $routeParams, $http
 		if(!$scope.phoneNumber || !$scope.customerName){
 			alert("You're an idiot.");
 		}else{
-			$scope.calculateSubtotal();
-			venmo.send($scope.subtotal);
-			$scope.addOrder();
+			var r = confirm($scope.customerName + ", please confirm your phone number: " + $scope.phoneNumber);
+			if (r) {
+				alert("Thank you for your order. You will receive a SMS message when your order is ready.");
+				$scope.calculateSubtotal();
+				venmo.send($scope.subtotal);
+				$scope.addOrder();
 
-			//Push the order onto firebase
-			$scope.order.customerName = $scope.customerName;
-			$scope.order.phoneNumber = $scope.phoneNumber;
-			$scope.orders.$add($scope.order);
+				//Push the order onto firebase
+				$scope.order.customerName = $scope.customerName;
+				$scope.order.phoneNumber = $scope.phoneNumber;
+				$scope.orders.$add($scope.order);
+			}
 		}
 
 
@@ -64,5 +68,5 @@ app.controller("menuController", function($scope, $firebase, $routeParams, $http
 		window.open("https://venmo.com/" + venmo.user + "?txn=pay&amount=" + amount);
 	},
 }
-	
+
 })
