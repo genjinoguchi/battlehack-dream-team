@@ -1,21 +1,16 @@
-<div id='menuedit'>
-	<div ng-repeat="order in orders">
+<div id='menu'>
+	<div ng-repeat="item in menu">
 		<div class="col-md-3 col-sm-6 hero-feature">
 	    	<div class="thumbnail">
-	    		
 	        	<img src="./img/rsz_crabby2.jpg" alt="">
 	        	<div class="caption">
-	            	<h3>{{ order.customerName}}</h3>
-	            	<p>{{ order.phoneNumber}}</p>
-	            	<div ng-repeat="food in order.foods">
-	            		<center>{{ food.name }} - {{ food.quantity }}</center><br>
-
-	            	</div>
-	            	<button ng-click="menu.$remove(item)" value="Finish item."
+	            	<h3>{{ item.name }}</h3>
+	            	<p>{{ item.description }}
+	            	<center>{{ item.price | currency }}</center><br>
 	        	</div>
+	        	<div ng-click=""
 	    	</div>
 		
 		</div>
 	</div>
 </div>
-
